@@ -8,13 +8,13 @@
 
 @import url(http://fonts.googleapis.com/css?family=Abel|Inconsolata|Architects+Daughter|Marvel:400,700);
 
-$am-panel-width: 400px;
+$am-panel-width: 384px;
 $am-color-dark: #568;
 $am-color-light: #78a;
 
-$am-panel-nav-size: 72px;
-$am-panel-icon-size: 42px;
-$am-panel-text-size: 32px;
+$am-panel-nav-size: 64px;
+$am-panel-icon-size: 38px;
+$am-panel-text-size: 26px;
 
 
 $am-font-family: 'Abel';
@@ -32,6 +32,10 @@ body {
 a {
 	text-decoration: none;
 	color: #000;
+}
+
+i {
+	font-style: normal;
 }
 
 .am-container {
@@ -111,6 +115,9 @@ a {
 					line-height: $am-panel-nav-size;
 					font-size: $am-panel-icon-size;
 					text-align: center;
+					&.txt {
+						font-size: $am-panel-text-size;
+					}
 				}
 			}
 		}
