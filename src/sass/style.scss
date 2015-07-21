@@ -12,11 +12,10 @@ $am-panel-width: 400px;
 $am-color-dark: #568;
 $am-color-light: #78a;
 
-$am-panel-toggle-size: 50px;
-$am-panel-font-size: 32px;
+$am-panel-nav-size: 72px;
+$am-panel-icon-size: 42px;
+$am-panel-text-size: 32px;
 
-$am-nav-size: 50px;
-$am-nav-font-size: 32px;
 
 $am-font-family: 'Abel';
 
@@ -48,7 +47,7 @@ body {
 		left: 0px;
 		background: $am-color-dark;
 		&.hidden {
-			margin-left: $am-panel-toggle-size - $am-panel-width;
+			margin-left: $am-panel-nav-size - $am-panel-width;
 			.am-panel-toggle {
 				background: $am-color-dark;
 				&:hover {
@@ -56,30 +55,30 @@ body {
 				}
 			}
 			& + .am-content {
-				left: $am-panel-toggle-size;
-
+				left: $am-panel-nav-size;
 			}
 		}
 		.am-brand {
 			width: 100%;
-			height: $am-panel-toggle-size;
-			line-height: $am-panel-toggle-size;
+			height: $am-panel-nav-size;
+			line-height: $am-panel-nav-size;
 			background: $am-color-light;
-			font-size: $am-panel-font-size;
-			font-weight: 500;
-			text-align: center;
+			font-size: $am-panel-icon-size;
+			span {
+				margin-left: 10px;
+			}
 		}
 		a.am-panel-toggle {
 			position: absolute;
 			top: 0px;
 			right: 0px;
-			width: $am-panel-toggle-size;
-			height: $am-panel-toggle-size;
-			line-height: $am-panel-toggle-size;
+			width: $am-panel-nav-size;
+			height: $am-panel-nav-size;
+			line-height: $am-panel-nav-size;
 			padding: 0px;
 			margin: 0px;
 			text-align: center;
-			font-size: $am-panel-font-size;
+			font-size: $am-panel-icon-size;
 			cursor: pointer;
 		}
 		.am-nav {
@@ -88,25 +87,25 @@ body {
 			width: 100%;
 			list-style-type: none;
 			li {
-				height: $am-nav-size;
-				line-height: $am-nav-size;
-				font-size: $am-nav-font-size;
+				height: $am-panel-nav-size;
+				line-height: $am-panel-nav-size;
+				font-size: $am-panel-text-size;
 				cursor: pointer;
 				&:hover {
 					background: $am-color-light;
 				}
 				span {
-					height: $am-nav-size;
-					line-height: $am-nav-size;
+					height: $am-panel-nav-size;
+					line-height: $am-panel-nav-size;
 					margin-left: 10px;
 
 				}
 				i {
 					float: right;
-					height: $am-nav-size;
-					width: $am-nav-size;
-					line-height: $am-nav-size;
-					font-size: $am-nav-font-size;
+					height: $am-panel-nav-size;
+					width: $am-panel-nav-size;
+					line-height: $am-panel-nav-size;
+					font-size: $am-panel-icon-size;
 					text-align: center;
 				}
 			}
