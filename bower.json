@@ -1,0 +1,21 @@
+{
+  "name": "alexmilanov.com",
+  "version": "0.2.0",
+  "authors": [
+    "Alex Milanov <alex@i4web.biz>"
+  ],
+  "description": "my personal site",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "~4.3.0",
+    "jquery": "~2.1.4"
+  }
+}
