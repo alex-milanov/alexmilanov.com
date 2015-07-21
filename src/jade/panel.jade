@@ -1,0 +1,25 @@
+a.am-panel-toggle.fa.fa-bars(
+	data-toggle-ref=".am-panel",
+	data-toggle-class="hidden"
+)
+.am-brand
+	span AlexMilanov.com
+ul.am-nav
+	li(class=((page=='home') ? 'active' : '')): a(href="/")
+		i.fa.fa-home 
+		span Home
+	li(class=(page=='funstuffjs') ? 'active' : ''): a(href="/funstuffjs")
+		i .js
+		span Fun Stuff with JavaScript
+	li(class=(page=='iblokz') ? 'active' : ''): a(href="/iblokz")
+		i iB
+		span iBlokz FullStack RAD
+	li: a(href="/blog")
+		i.fa.fa-font
+		span Thoughts, Tips & Tricks
+	li: a(href="/calendat")
+		i.fa.fa-calendar
+		span Check my Calendar
+	li: a(href="/contact")
+		i.fa.fa-envelope
+		span Get it touch

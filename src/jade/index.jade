@@ -1,39 +1,7 @@
-html
-	head
-		title AlexMilanov.com
-		link(rel='stylesheet',href='lib/font-awesome.css')
-		link(rel='stylesheet',href='css/style.css')
-	body
-		.am-container
-			.am-panel
-				a.am-panel-toggle.fa.fa-bars(
-					data-toggle-ref=".am-panel",
-					data-toggle-class="hidden"
-				)
-				.am-brand
-					span AlexMilanov.com
-				ul.am-nav
-					li: a 
-						i.fa.fa-tachometer 
-						span Showcase
-					li: a
-						i .js
-						span Fun Stuff with JavaScript
-					li: a
-						i iB
-						span iBlokz FullStack RAD
-					li: a
-						i.fa.fa-font
-						span Thoughts, Tips & Tricks
-					li: a
-						i.fa.fa-calendar
-						span Check my Calendar
-					li: a
-						i.fa.fa-envelope
-						span Get it touch
-			.am-content
+extends layout
 
+block vars
+	- var page = "home"
 
-		script(src='lib/jquery.js')
-		script(src='js/main.js')
-			
+block content
+	h1= "title:" + page

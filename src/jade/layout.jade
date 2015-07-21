@@ -1,0 +1,18 @@
+block vars
+html
+	head
+		title AlexMilanov.com
+		link(rel='stylesheet',href='/lib/font-awesome.css')
+		link(rel='stylesheet',href='/css/style.css')
+	body
+		.am-container
+			.am-panel.hidden
+				include panel.jade
+			.am-content
+				h3= page
+				block content
+
+
+		script(src='/lib/jquery.js')
+		script(src='/js/main.js')
+			
