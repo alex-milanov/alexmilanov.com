@@ -1,4 +1,16 @@
 $(function(){
+
+	$(".am-content > * > h1 span").each(function(){
+		var text = $(this).text();
+		var phrases = text.split(/[\.\!\,]{1}\ /i);
+		console.log(phrases)
+		$(this).typed({
+			strings: phrases,
+			typeSpeed: 0
+		})
+	});
+
+
 	var context = {
 		params: {}
 	};

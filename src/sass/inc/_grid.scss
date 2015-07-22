@@ -5,34 +5,37 @@
 	padding: 10px;
 }
 
-@mixin am-grid($parts) {
-    width: 100%/$parts;
+@mixin am-grid($parts, $amount) {
+    width: 100%/$parts*$amount;
     display: block;
 	float: left;
 	box-sizing: border-box;
 }
 
 .am-grid-2 {
-	@include am-grid(2)
+	@include am-grid(2,1)
 }
 .am-grid-3 {
-	@include am-grid(3)
+	@include am-grid(3,1)
+}
+.am-grid-3-2 {
+	@include am-grid(3,2)
 }
 .am-grid-4 {
-	@include am-grid(4)
+	@include am-grid(4,1)
 }
 .am-grid-5 {
-	@include am-grid(5)
+	@include am-grid(5,1)
 }
 .am-grid-6 {
-	@include am-grid(6)
+	@include am-grid(6,1)
 }
 .am-grid-8 {
-	@include am-grid(8)
+	@include am-grid(8,1)
 }
 .am-grid-10 {
-	@include am-grid(10)
+	@include am-grid(10,1)
 }
 .am-grid-12 {
-	@include am-grid(12)
+	@include am-grid(12,1)
 }
