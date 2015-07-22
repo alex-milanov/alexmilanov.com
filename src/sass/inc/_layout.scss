@@ -94,6 +94,9 @@
 		overflow-y: scroll;
 		overflow-x: none;
 		> * > * {
+			padding: 0px 10px;
+		}
+		> * > h1 {
 			padding: 10px;
 		}
 		.am-banner {
