@@ -1,0 +1,40 @@
+@mixin am-op-bg($url) {
+	&:before {
+		content: ' ';
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		z-index: 1;
+		opacity: 0.2;
+		background-image: url($url);
+		background-repeat: no-repeat;
+		background-position: 50% 0;
+		-ms-background-size: 100%;
+		-o-background-size: 100%;
+		-moz-background-size: 100%;
+		-webkit-background-size: cover;
+		background-size: cover;
+	}
+}
+
+.am-home {
+	.am-banner.am-funstuffjs {
+		background: $am-color-red-light;
+	}
+	.am-banner.am-iblokz {
+		background: $am-color-green-light;
+	}
+	.am-banner.am-qoolejs {
+		background: $am-color-blue-light;
+		@include am-op-bg('../assets/banners/qoolejs.png')
+	}
+	.am-banner.am-restapi {
+		background: $am-color-green-light;
+	}
+	.am-banner.am-algorave {
+		background: $am-color-red-light;
+	}
+}
