@@ -1,0 +1,89 @@
+.am-layout {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	> * {
+		position: absolute;
+		top: 0px;
+		bottom: 0px;
+		-moz-transition: .3s ease all;
+		-webkit-transition: .3s ease all;
+		transition: .3s ease all;
+	}
+	.am-panel {
+		width: $am-panel-width;
+		left: 0px;
+		background: $am-color-dark;
+		&.hidden {
+			margin-left: $am-panel-nav-size - $am-panel-width;
+			.am-panel-toggle {
+				background: $am-color-dark;
+				&:hover {
+					background: $am-color-light;
+				}
+			}
+			& + .am-content {
+				left: $am-panel-nav-size;
+			}
+		}
+		.am-brand {
+			width: 100%;
+			height: $am-panel-nav-size;
+			line-height: $am-panel-nav-size;
+			background: $am-color-light;
+			font-size: $am-panel-icon-size;
+			span {
+				margin-left: 10px;
+			}
+		}
+		a.am-panel-toggle {
+			position: absolute;
+			top: 0px;
+			right: 0px;
+			width: $am-panel-nav-size;
+			height: $am-panel-nav-size;
+			line-height: $am-panel-nav-size;
+			padding: 0px;
+			margin: 0px;
+			text-align: center;
+			font-size: $am-panel-icon-size;
+			cursor: pointer;
+		}
+		.am-nav {
+			margin: 0px;
+			padding: 0px;
+			width: 100%;
+			list-style-type: none;
+			li {
+				height: $am-panel-nav-size;
+				line-height: $am-panel-nav-size;
+				font-size: $am-panel-text-size;
+				cursor: pointer;
+				&:hover, &.active {
+					background: $am-color-light;
+				}
+				span {
+					height: $am-panel-nav-size;
+					line-height: $am-panel-nav-size;
+					margin-left: 10px;
+
+				}
+				i {
+					float: right;
+					height: $am-panel-nav-size;
+					width: $am-panel-nav-size;
+					line-height: $am-panel-nav-size;
+					font-size: $am-panel-icon-size;
+					text-align: center;
+					&.txt {
+						font-size: $am-panel-text-size;
+					}
+				}
+			}
+		}
+	}
+	.am-content {
+		left: $am-panel-width;
+		right: 0px;
+	}
+}
