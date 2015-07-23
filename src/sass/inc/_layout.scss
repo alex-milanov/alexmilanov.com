@@ -105,27 +105,22 @@
 			height: 232px;
 			box-sizing: border-box;
 			position: relative;
-			h1 {
-				font-size: 32px;
+			h1, h2, h3 {
 				width: 100%;
 				text-align: center;
-				height: 80px;
-				line-height: 100px;
 				z-index: 2;
+			}
+			h1 {
+				margin-top: 30px;
+				font-size: $am-card-h1-size;
 			}
 			h2 {
-				font-size: 22px;
-				width: 100%;
-				text-align: center;
-				height: 40px;
-				z-index: 2;
+				margin-top: 7px;
+				font-size: $am-card-h2-size;
 			}
 			h3 {
-				font-size: 18px;
-				width: 100%;
-				text-align: center;
-				height: 40px;
-				z-index: 2;
+				margin-top: 7px;
+				font-size: $am-card-h3-size;
 			}
 			.am-banner-stack {
 				height: 56px;
