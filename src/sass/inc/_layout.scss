@@ -11,19 +11,23 @@
 		transition: .3s ease all;
 	}
 	.am-panel {
-		width: $am-panel-width;
-		left: 0px;
 		background: $am-color-dark;
-		&.hidden {
-			margin-left: $am-panel-nav-size - $am-panel-width;
+		left: 0px;
+		margin-left: $am-panel-nav-size - $am-panel-width;
+		width: $am-panel-width;
+		&.opened {
+			margin-left: 0px;
 			.am-panel-toggle {
-				background: $am-color-dark;
-				&:hover {
-					background: $am-color-light;
-				}
+				background: $am-color-light;
 			}
 			& + .am-content {
-				left: $am-panel-nav-size;
+				left: $am-panel-width;
+			}
+		}
+		&.hidden {
+			margin-left: -$am-panel-width;
+			& + .am-content {
+				left: 0px;
 			}
 		}
 		.am-brand {
@@ -48,6 +52,9 @@
 			text-align: center;
 			font-size: $am-panel-icon-size;
 			cursor: pointer;
+			&:hover {
+				background: $am-color-light;
+			}
 		}
 		.am-nav {
 			margin: 0px;
@@ -88,66 +95,67 @@
 		}
 	}
 	.am-content {
-		left: $am-panel-width;
+		left: $am-panel-nav-size;
 		right: 0px;
 		padding: 10px;
 		overflow-y: scroll;
 		overflow-x: none;
-		> * > * {
+		.deck > * {
 			padding: 0px 10px;
+			.am-card {
+				background: #78a;
+				width: 100%;
+				height: 232px;
+				box-sizing: border-box;
+				position: relative;
+				h1, h2, h3 {
+					width: 100%;
+					text-align: center;
+					z-index: 2;
+				}
+				h1 {
+					margin-top: 30px;
+					font-size: $am-card-h1-size;
+				}
+				h2 {
+					margin-top: 7px;
+					font-size: $am-card-h2-size;
+				}
+				h3 {
+					margin-top: 7px;
+					font-size: $am-card-h3-size;
+				}
+				.am-card-stack {
+					height: 56px;
+					margin: 0px;
+					position: absolute;
+					display: block;
+					width: 100%;
+					bottom: 0px;
+					background: #fff;
+					opacity: 0.9;
+					> * {
+						text-align: center;
+						margin: 0px;
+						padding: 0px;
+						height: 56px;
+						line-height: 56px;
+						span {
+							font-weight: 700;
+						}
+						img {
+							margin: 3px 0px;
+							width: 50px;
+							height: 50px;
+						}
+					}
+					z-index: 2;
+				}
+			}
 		}
 		> * > h1 {
 			padding: 10px;
 		}
-		.am-banner {
-			background: #78a;
-			width: 100%;
-			height: 232px;
-			box-sizing: border-box;
-			position: relative;
-			h1, h2, h3 {
-				width: 100%;
-				text-align: center;
-				z-index: 2;
-			}
-			h1 {
-				margin-top: 30px;
-				font-size: $am-card-h1-size;
-			}
-			h2 {
-				margin-top: 7px;
-				font-size: $am-card-h2-size;
-			}
-			h3 {
-				margin-top: 7px;
-				font-size: $am-card-h3-size;
-			}
-			.am-banner-stack {
-				height: 56px;
-				margin: 0px;
-				position: absolute;
-				display: block;
-				width: 100%;
-				bottom: 0px;
-				background: #fff;
-				opacity: 0.9;
-				> * {
-					text-align: center;
-					margin: 0px;
-					padding: 0px;
-					height: 56px;
-					line-height: 56px;
-					span {
-						font-weight: 700;
-					}
-					img {
-						margin: 3px 0px;
-						width: 50px;
-						height: 50px;
-					}
-				}
-				z-index: 2;
-			}
-		}
+		
 	}
 }

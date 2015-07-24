@@ -6,9 +6,21 @@ $(function(){
 		console.log(phrases)
 		$(this).typed({
 			strings: phrases,
-			typeSpeed: 0
+			typeSpeed: 0,
+			callback: function() {
+				$('.deck').removeClass('hidden')
+				//$('.am-panel').removeClass('hidden')
+			}
 		})
 	});
+
+	$('.deck > *').each(function(){
+		var speed = 900;
+		var offset = $(this).offset().left*0.8 + $(this).offset().top;
+		var delay = parseFloat(offset/speed).toFixed(2);
+				
+		$(this).css('transitionDelay', delay + "s");
+	})
 
 
 	var context = {

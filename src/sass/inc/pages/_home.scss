@@ -16,19 +16,21 @@
 }
 
 .am-home {
-	.am-banner.am-funstuffjs {
-		background: $am-color-yellow-light;
-	}
-	.am-banner.am-iblokz {
-		background: $am-color-green-light;
-	}
-	.am-banner.am-qoolejs {
-		background: $am-color-blue-light;
-	}
-	.am-banner.am-restapi {
-		background: $am-color-red-light;
-	}
-	.am-banner.am-algorave {
-		background: $am-color-yellow-light;
+	.deck {
+		.am-card.am-funstuffjs {
+			background: $am-color-yellow-light;
+		}
+		.am-card.am-iblokz {
+			background: $am-color-green-light;
+		}
+		.am-card.am-qoolejs {
+			background: $am-color-blue-light;
+		}
+		.am-card.am-restapi {
+			background: $am-color-red-light;
+		}
+		.am-card.am-algorave {
+			background: $am-color-yellow-light;
+		}
 	}
 }
