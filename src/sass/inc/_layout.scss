@@ -11,14 +11,13 @@
 		transition: .3s ease all;
 	}
 	.am-panel {
-		background: $am-color-dark;
 		left: 0px;
 		margin-left: $am-panel-nav-size - $am-panel-width;
 		width: $am-panel-width;
 		&.opened {
 			margin-left: 0px;
 			.am-panel-toggle {
-				background: $am-color-light;
+				background: $am-color-dark;
 			}
 			& + .am-content {
 				left: $am-panel-width;
@@ -34,7 +33,6 @@
 			width: 100%;
 			height: $am-panel-nav-size;
 			line-height: $am-panel-nav-size;
-			background: $am-color-light;
 			font-size: $am-panel-icon-size;
 			span {
 				margin-left: 10px;
@@ -53,7 +51,7 @@
 			font-size: $am-panel-icon-size;
 			cursor: pointer;
 			&:hover {
-				background: $am-color-light;
+				background: $am-color-dark;
 			}
 		}
 		.am-nav {
@@ -66,7 +64,10 @@
 				line-height: $am-panel-nav-size;
 				font-size: $am-panel-text-size;
 				cursor: pointer;
-				&:hover, &.active {
+				&:hover {
+					background: $am-color-dark;
+				}
+				&.active {
 					background: $am-color-light;
 				}
 				a {

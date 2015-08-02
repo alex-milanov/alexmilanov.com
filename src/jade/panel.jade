@@ -3,23 +3,23 @@ a.am-panel-toggle.am-font-graphic.am-font-big(
 	data-toggle-class="opened"
 ) =
 .am-brand
-	span 
+	span AlexMilanov.com
 ul.am-nav
-	li(class=((page=='home') ? 'active' : '')): a(href="/")
+	li(class=((page=='home') ? 'active' : '')): a(href="/", title='Index')
 		i.am-font-graphic.am-font-medium >_  
-		span Home
-	li(class=(page=='fun') ? 'active' : ''): a(href="/fun")
+		span Index
+	li(class=(page=='fun') ? 'active' : ''): a(href="/fun", title='Fun Stuff With JavaScript')
 		i.am-font-graphic.am-font-medium {fun}
 		span Fun Stuff with JavaScript
-	li(class=(page=='git') ? 'active' : ''): a(href="/git")
+	li(class=(page=='git') ? 'active' : ''): a(href="/git", title='Open Source')
 		i.am-font-graphic.am-font-medium= "<git>" 
 		span Open Source
-	li(class=(page=='t') ? 'active' : ''): a(href="/t")
+	li(class=(page=='txt') ? 'active' : ''): a(href="/txt", title='Thoughts, Tips and Tricks')
 		i.am-font-graphic.am-font-medium .txt 
-		span Thoughts, Tips & Tricks
-	li(class=(page=='calendar') ? 'active' : ''): a(href="/calendar")
+		span Thoughts, Tips and Tricks
+	li(class=(page=='calendar') ? 'active' : ''): a(href="/calendar", title='Schedule and Events')
 		i.am-font-graphic.am-font-medium [07]
-		span Calendar
-	li(class=(page=='contact') ? 'active' : ''): a(href="/contact")
+		span Schedule and Events
+	li(class=(page=='contact') ? 'active' : ''): a(href="/contact", title='Get in touch')
 		i.am-font-graphic.am-font-medium (@)
 		span Get in touch
