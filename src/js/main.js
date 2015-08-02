@@ -2,14 +2,14 @@ $(function(){
 
 	$(".am-content > * > h1 span").each(function(){
 		var text = $(this).text();
-		var phrases = text.split(/[\.\!\,]{1}\ /i);
+		var phrases = text.split(/[\.\!\?]{1}\ /i);
 		console.log(phrases)
 		$(this).typed({
 			strings: phrases,
 			typeSpeed: 0,
 			callback: function() {
 				$('.deck').removeClass('hidden')
-				//$('.am-panel').removeClass('hidden')
+				$('.am-panel').removeClass('hidden')
 			}
 		})
 	});

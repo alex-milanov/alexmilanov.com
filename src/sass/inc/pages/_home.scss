@@ -17,20 +17,24 @@
 
 .am-home {
 	.deck {
-		.am-card.am-funstuffjs {
+		.card {
+			height: 232px;
+			&.am-funstuffjs {
 			background: $am-color-yellow-light;
+			}
+			&.am-iblokz {
+				background: $am-color-green-light;
+			}
+			&.am-qoolejs {
+				background: $am-color-blue-light;
+			}
+			&.am-restapi {
+				background: $am-color-red-light;
+			}
+			&.am-algorave {
+				background: $am-color-yellow-light;
+			}
 		}
-		.am-card.am-iblokz {
-			background: $am-color-green-light;
-		}
-		.am-card.am-qoolejs {
-			background: $am-color-blue-light;
-		}
-		.am-card.am-restapi {
-			background: $am-color-red-light;
-		}
-		.am-card.am-algorave {
-			background: $am-color-yellow-light;
-		}
+		
 	}
 }

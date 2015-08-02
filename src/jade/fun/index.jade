@@ -1,0 +1,32 @@
+extends ../layout
+
+block vars
+	- var page = 'fun'
+
+block content
+	.am-page-fun
+		h1 
+			i.am-font-graphic.am-font-medium {fun} 
+			span Fun Stuff with JavaScript
+		.deck.hidden
+			.am-grid-3-2
+				.card
+					p.
+						Weekly Live Coding Stream where I am working 
+						on variety of projects from full-stack and 
+						hybrid apps through 3d and music to hardware apps.
+				.card 
+					p Currently I am working on resurrecting a quake2 level editor from 99.
+					p.
+						I find the object interaction better than most editors out there like blender 
+						and 3dsmax and with the 2015 tech we can make it even better.
+				.card
+					p check out the demo: 
+						a(href="http://qoolejs.wp.alexmilanov.com", target="_blank") http://qoolejs.wp.alexmilanov.com
+					p fork it at github: 
+						a(href="http://github.com/alex-milanov/qoolejs", target="_blank") http://github.com/alex-milanov/qoolejs
+					p follow the hackpad: 
+						a(href="https://hackpad.com/FunStuffJS-26.07-QooleJS-jTX7hFICoq9", target="_blank") https://hackpad.com/FunStuffJS-26.07-QooleJS-jTX7hFICoq9
+			.am-grid-3: .card
+				p: a(href="https://www.livecoding.tv/alex_milanov/") https://www.livecoding.tv/alex_milanov/
+				p Next Stream: 02.08.2015 Sunday 18:00 EEST

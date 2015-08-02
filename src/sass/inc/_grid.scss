@@ -12,6 +12,10 @@
 	box-sizing: border-box;
 }
 
+.am-grid-1 {
+	@include am-grid(1,1)
+}
+
 .am-grid-2 {
 	@include am-grid(2,1)
 }
