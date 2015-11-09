@@ -18,11 +18,15 @@ var app = express();
 var marked = require('marked'); // For :markdown filter in jade
 var path = require('path');
 
+var gulpMarkedJade = require("./inc/gulp-marked-jade");
+
 
 var paths = {
 	sass: ['./src/sass/**/*.scss'],
 	jade: ['./src/jade/**/*.jade'],
-	js: ['./src/js/**/*.js']
+	js: ['./src/js/**/*.js'],
+	content: ['./src/content/**/*.md'],
+	contentLayout: ['./src/jade/txt/index.jade']
 };
 
 // additional, not recognized bower files
@@ -49,7 +53,7 @@ gulp.task('sass', function(done) {
 gulp.task('jade', function(done) {
 	// TODO: get from config
 	var YOUR_LOCALS = {};
-	gulp.src('./src/jade/**/*.jade')
+	gulp.src(['./src/jade/**/*.jade','!./src/jade/inc/**/*.jade'])
 		.pipe(jade({
 			locals: YOUR_LOCALS,
 			pretty: true
@@ -59,6 +63,14 @@ gulp.task('jade', function(done) {
 		.on('end',done);
 });
 
+gulp.task('content', function(done) {
+	
+	gulp.src(['./src/content/**/*.md','!./src/content/README.md'])
+		.pipe(gulpMarkedJade("./src/jade/txt/index.jade"))
+		.pipe(gulp.dest('./dist/'))
+		.pipe(livereload())
+		.on('end',done);
+});
 
 gulp.task("bower-files", function(done){
 
@@ -121,9 +133,10 @@ gulp.task('watch', function() {
 	gulp.watch(paths.sass, ['sass']);
 	gulp.watch(paths.jade, ['jade']);
 	gulp.watch(paths.js, ['js']);
+	gulp.watch([paths.content,paths.contentLayout], ['content']);
 });
 
-gulp.task('build', ['sass','jade','js','bower-files','assets']);
+gulp.task('build', ['sass','jade','js','content','bower-files','assets']);
 
 gulp.task('serve', ['express','livereload','watch']);
 

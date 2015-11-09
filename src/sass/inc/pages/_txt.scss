@@ -1,0 +1,16 @@
+.am-page-txt {
+	.am-article {
+		padding: 20px;
+		background: $am-color-article-background;
+		ul, ol {
+			list-style-type: initial;
+			margin: 0px 20px;
+			padding: initial;
+			li {
+				list-style-type: initial;
+				margin: initial;
+				padding: initial;
+			}
+		}
+	}
+}

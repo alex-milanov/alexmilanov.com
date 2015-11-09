@@ -1,10 +1,13 @@
-extends ../layout
+extends ../inc/layout
 
 block vars
 	- var page = 'txt'
 
 block content
-	.am-page-t
+	.am-page-txt
 		h1 
 			i.am-font-graphic .txt 
 			span Thoughts, Tips and Tricks
+		.deck.hidden
+			.am-grid-3-2
+				.am-article!= content || ''
