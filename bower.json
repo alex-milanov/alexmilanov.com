@@ -15,9 +15,19 @@
     "tests"
   ],
   "dependencies": {
+    "clndr": "~1.3.4",
     "font-awesome": "~4.3.0",
     "jquery": "~2.1.4",
-    "typed.js": "*",
-    "materialize": "~0.97.0"
+    "materialize": "~0.97.0",
+    "moment": "~2.10.6",
+    "typed.js": "*"
+  },
+  "overrides": {
+    "font-awesome": {
+      "main": [
+        "css/**/*.css",
+        "fonts/**/*"
+      ]
+    }
   }
 }

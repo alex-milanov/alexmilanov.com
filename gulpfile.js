@@ -67,13 +67,13 @@ gulp.task("bower-files", function(done){
 	del([
 		'./dist/lib/**/*'
 	], function(){
-		gulp.src(bowerFiles)
+		gulp.src(bowerFiles, { base: './src/lib' })
 			// .pipe(filterForWww)
 			.pipe(gulp.dest("./dist/lib"))
 			// .pipe(filterForWww.restore())
 			// .pipe(filterForMobile)
 			// .pipe(gulp.dest("./mobile/www/lib"))
-//			.pipe( livereload())
+			.pipe( livereload())
 			.on('end',done);
 	});
 });
