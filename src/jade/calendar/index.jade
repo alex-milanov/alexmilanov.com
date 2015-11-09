@@ -3,8 +3,66 @@ extends ../inc/layout
 block vars
 	- var page = 'calendar'
 
+block style
+	link(rel='stylesheet',href='/lib/clndr/example/styles/clndr.css')
+
 block content
 	.am-page-calendar
 		h1 
 			i.am-font-graphic.am-font-medium [07] 
 			span Calendar
+		.deck.hidden
+			.am-grid-3-2
+				.am-calendar.cal1
+			.am-grid-3
+				.card
+					div {fun} JSLoops, Music Studio with #WebAudioAPI
+					div Mon-Fri 20:00
+					div: a(href="https://livecoding.tv/alex-milanov") https://livecoding.tv/alex-milanov
+				.card
+					div {fun} QooleJS - 3D Editor with Three.js
+					div Sundays 20:00
+					div: a(href="https://livecoding.tv/alex-milanov") https://livecoding.tv/alex-milanov
+
+block scripts
+	script.
+		var schedule = [
+			{
+				"title": "{fun} QooleJS - 3D Editor with Three.js",
+				"url": "https://livecoding.tv/alex-milanov",
+				"start": "2015-11-15",
+				"time": "20:00",
+				"date": "2015-11-15 20:00",
+				"recurring": true,
+				"recurrence": "weekly",
+				"daysOfWeek": [6]
+			},
+			{
+				"title": "{fun} JSLoops, Music Studio with #WebAudioAPI",
+				"url": "https://livecoding.tv/alex-milanov",
+				"start": "2015-11-09",
+				"time": "20:00",
+				"date": "2015-11-09 20:00",
+				"recurring": true,
+				"recurrence": "weekly",
+				"daysOfWeek": [0,1,2,3,4]
+			}
+		];
+
+		$(document).ready(function(){
+
+			var events = [];
+
+			schedule.forEach(function(event){
+				if(event.recurring){
+					events.push(event);
+				}
+			})
+
+			console.log(events);
+
+			$(".am-calendar").clndr({
+				events: events,
+				weekOffset: 1
+			});
+		})
