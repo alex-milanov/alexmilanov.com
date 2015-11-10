@@ -1,18 +1,8 @@
 $(function(){
 
-	$(".am-content > * > h1 span").each(function(){
-		var text = $(this).text();
-		var phrases = text.split(/[\.\!\?]{1}\ /i);
-		console.log(phrases)
-		$(this).typed({
-			strings: phrases,
-			typeSpeed: 0,
-			callback: function() {
-				$('.deck').removeClass('hidden')
-				$('.am-panel').removeClass('hidden')
-			}
-		})
-	});
+	var userHasWatchedIntro = Cookies.get("userHasWatchedIntro") || false;
+
+	
 
 	$('.deck > *').each(function(){
 		var speed = 900;
@@ -21,6 +11,25 @@ $(function(){
 				
 		$(this).css('transitionDelay', delay + "s");
 	})
+
+	if(!userHasWatchedIntro){
+		$(".am-content > * > h1 span").each(function(){
+			var text = $(this).text();
+			var phrases = text.split(/[\.\!\?]{1}\ /i);
+			//console.log(phrases)
+			$(this).typed({
+				strings: phrases,
+				typeSpeed: 0,
+				callback: function() {
+					
+					Cookies.set("userHasWatchedIntro", true);
+				}
+			})
+		});
+	} else {
+		$('.deck').removeClass('hidden')
+		$('.am-panel').removeClass('hidden')
+	}
 
 
 	var context = {
