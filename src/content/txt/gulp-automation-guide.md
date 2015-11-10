@@ -1,4 +1,4 @@
-# Gulp Automation Guide
+# Gulp Automation Guide (in progress)
 In this article I will go through all the steps to create your own gulp automation setup that will help you:
 - compile and minify sass
 - pick and compile bower dependencies

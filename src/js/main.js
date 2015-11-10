@@ -2,8 +2,6 @@ $(function(){
 
 	var userHasWatchedIntro = Cookies.get("userHasWatchedIntro") || false;
 
-	
-
 	$('.deck > *').each(function(){
 		var speed = 900;
 		var offset = $(this).offset().left*0.8 + $(this).offset().top;
@@ -21,7 +19,8 @@ $(function(){
 				strings: phrases,
 				typeSpeed: 0,
 				callback: function() {
-					
+					$('.deck').removeClass('hidden')
+					$('.am-panel').removeClass('hidden')
 					Cookies.set("userHasWatchedIntro", true);
 				}
 			})
