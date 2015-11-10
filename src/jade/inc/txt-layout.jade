@@ -1,4 +1,4 @@
-extends ../inc/layout
+extends layout
 
 block vars
 	- var page = 'txt'
@@ -9,7 +9,6 @@ block content
 			i.am-font-graphic .txt 
 			span Thoughts, Tips and Tricks
 		.deck.hidden
-			.am-grid-3-2
-				a(href="/txt/gulp-automation-guide.html")
-					.am-article
-						h1 Gulp Automation Guide
+			.am-grid-5-4
+				.am-article
+					!= content || ''

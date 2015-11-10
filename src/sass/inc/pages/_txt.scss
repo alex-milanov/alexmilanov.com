@@ -1,10 +1,49 @@
 .am-page-txt {
 	.am-article {
-		padding: 20px;
-		background: $am-color-article-background;
+		@extend .card;
+		padding: 0px 40px;
+		font-size: 20px;
+
+		a {
+			color: #24a;
+		}
+
+		h1 {
+			margin: 24px -40px;
+			line-height: 80px;
+			height: 80px;
+			background: $am-color-red-light;
+			font-size: 36px;
+			text-align: center;
+		}
+		h2 {
+			margin: 24px -40px;
+			padding: 0px 40px;
+			line-height: 50px;
+			height: 50px;
+			background: $am-color-yellow-light;
+			font-size: 28px;
+			box-sizing: border-box;
+		}
+
+		p, h3, h4 {
+			margin: 24px 0px 8px 0px;
+		}
+
+		pre {
+			font-size: 12px;
+			font-family: Consolas, Monaco, 'Andale Mono', monospace;
+			background: #222;
+			color: #aaa;
+			display: block;
+			padding: 20px 0px;
+			border-radius: 2px;
+			margin: 0px 0px 8px 0px;
+		}
+
 		ul, ol {
 			list-style-type: initial;
-			margin: 0px 20px;
+			margin: 0px 40px;
 			padding: initial;
 			li {
 				list-style-type: initial;

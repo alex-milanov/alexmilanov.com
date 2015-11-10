@@ -31,6 +31,9 @@
 .am-grid-5 {
 	@include am-grid(5,1)
 }
+.am-grid-5-4 {
+	@include am-grid(5,4)
+}
 .am-grid-6 {
 	@include am-grid(6,1)
 }

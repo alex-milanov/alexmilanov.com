@@ -27,7 +27,7 @@ var paths = {
 	js: ['./src/js/**/*.js'],
 	assets: ['./src/assets/**/*'],
 	content: ['./src/content/**/*.md'],
-	contentLayout: ['./src/jade/txt/index.jade']
+	contentLayout: ['./src/jade/inc/**/*.jade']
 };
 
 // additional, not recognized bower files
@@ -67,7 +67,7 @@ gulp.task('jade', function(done) {
 gulp.task('content', function(done) {
 	
 	gulp.src(['./src/content/**/*.md','!./src/content/README.md'])
-		.pipe(gulpMarkedJade("./src/jade/txt/index.jade"))
+		.pipe(gulpMarkedJade("./src/jade/inc/txt-layout.jade"))
 		.pipe(gulp.dest('./dist/'))
 		.pipe(livereload())
 		.on('end',done);
