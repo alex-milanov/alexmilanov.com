@@ -19,7 +19,6 @@
     "font-awesome": "~4.3.0",
     "jquery": "~2.1.4",
     "lodash": "~3.10.1",
-    "materialize": "~0.97.0",
     "moment": "~2.10.6",
     "typed.js": "*"
   },
