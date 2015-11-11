@@ -12,3 +12,36 @@ block content
 			.am-grid-5-4
 				.am-article
 					!= content || ''
+
+block scripts
+	script.
+		var techList = {
+			gulp: "/assets/stack/gulp128p.png",
+			webgl: "/assets/stack/webgl130p.png",
+			nodejs: "/assets/stack/nodejs140p.png",
+			jade: "/assets/stack/jade400p.png",
+			bower: "/assets/stack/bower400p.png"
+		};
+
+		$(document).ready(function(){
+
+			var $techStackOrig = $(".lang-techstack").parent();
+			var $techStack = $("<div></div>").addClass("am-card-stack");
+
+			var techStackArr = $techStackOrig.text().split(",");
+
+			$techStackOrig.replaceWith($techStack);
+
+			var techStackLength = techStackArr.length;
+
+			techStackArr.forEach(function(tech){
+				var $techElGrid = $("<div></div>").addClass("am-grid-"+techStackLength);
+				if(techList[tech.toLowerCase()] !== undefined){
+					$techElGrid.append($("<img></img>").attr("src",techList[tech.toLowerCase()]));
+				} else {
+					$techElGrid.append($("<span></span>").text(tech));
+				}
+				$techStack.append($techElGrid);
+			})
+
+		})

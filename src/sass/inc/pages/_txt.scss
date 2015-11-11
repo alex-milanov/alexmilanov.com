@@ -3,18 +3,23 @@
 		@extend .card;
 		padding: 0px 40px;
 		font-size: 20px;
-
 		a {
 			color: #24a;
 		}
 
 		h1 {
-			margin: 24px -40px;
+			margin: 0px -50px;
 			line-height: 80px;
-			height: 80px;
+			padding-left: 50px;
 			background: $am-color-red-light;
 			font-size: 36px;
-			text-align: center;
+		}
+
+		.am-card-stack {
+			position: relative;
+			margin: 0px -40px;
+			padding: 5px 0px;
+			width: auto;
 		}
 		h2 {
 			margin: 24px -40px;
@@ -32,7 +37,7 @@
 
 		pre {
 			font-size: 12px;
-			font-family: Consolas, Monaco, 'Andale Mono', monospace;
+			font-family: $am-font-mono;
 			background: #222;
 			color: #aaa;
 			display: block;
