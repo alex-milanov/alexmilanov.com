@@ -9,6 +9,8 @@ I decided to write an article that will guide you throught the process of instal
 
 I will be updating this article as I am changing my setup.
 
+![my-linux-setup-1](/assets/txt/my-linux-setup-1.png)
+
 Here is the current tech checklist:
 - **xubuntu** linux base
 - **compiz** - I use mostly for workspace transitions, like it is in unity
@@ -64,6 +66,7 @@ I only use this for smooth workspace transitions. You can achieve similar intera
  - Utitlity: Compiz Library Toolbox, Notification, Regex Matching
  - Window Management: Grid, Move Window, Place Windows, Resize Window
 3. Replace the window manager with compiz
+
 ```sh
   compiz --replace
 ```
@@ -81,3 +84,4 @@ I only use this for smooth workspace transitions. You can achieve similar intera
 ```sh
   xfce4-terminal --drop-down
 ```
+
