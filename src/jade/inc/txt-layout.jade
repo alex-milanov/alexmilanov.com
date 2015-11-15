@@ -20,7 +20,13 @@ block scripts
 			webgl: "/assets/stack/webgl130p.png",
 			nodejs: "/assets/stack/nodejs140p.png",
 			jade: "/assets/stack/jade400p.png",
-			bower: "/assets/stack/bower400p.png"
+			bower: "/assets/stack/bower400p.png",
+			docky: "/assets/stack/docky200p.png",
+			numix: "/assets/stack/numix256p.png",
+			xubuntu: "/assets/stack/xubuntu375p.png",
+			zsh: "/assets/stack/zsh200-125p.png",
+			guake: "/assets/stack/guake85p.jpg",
+			compiz: "/assets/stack/compiz600p.png"
 		};
 
 		$(document).ready(function(){
@@ -28,7 +34,7 @@ block scripts
 			var $techStackOrig = $(".lang-techstack").parent();
 			var $techStack = $("<div></div>").addClass("am-card-stack");
 
-			var techStackArr = $techStackOrig.text().split(",");
+			var techStackArr = $techStackOrig.text().replace("\n","").split(",");
 
 			$techStackOrig.replaceWith($techStack);
 
