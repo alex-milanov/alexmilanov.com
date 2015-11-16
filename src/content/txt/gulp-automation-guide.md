@@ -1,10 +1,13 @@
-
-```techstack
-gulp,nodejs,bower,SASS,Jade,LiveReload
+```meta
+{
+  "author": "Alex Milanov",
+  "avatar": "http://1.gravatar.com/avatar/0edabe98dd46b7ca4b69476a6be41736",
+  "createDate": "2015-11-11",
+  "lastUpdate": "2015-11-16",
+  "techStack": ["gulp","nodejs","bower","sass","Jade","LiveReload"]
+}
 ```
-
-# Gulp Automation Guide (in progress)
-
+# Gulp Automation Guide
 
 In this article I will go through all the steps to create your own gulp automation setup that will help you:
 - compile and minify sass

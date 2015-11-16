@@ -13,12 +13,37 @@
 		}
 
 		h1 {
-			margin: 0px -50px;
-			line-height: 80px;
+			margin: 10px -50px 0px -50px;
+			line-height: 60px;
 			padding-left: 50px;
 			background: $am-color-yellow-light;
 			font-size: 36px;
+			
 		}
+
+		.am-article-meta {
+			margin: 15px -40px 20px -40px;
+			text-align: center;
+			p {
+				display: inline;
+				margin: 0px 10px;
+				font-weight: 500;
+				&.fa:before {
+					margin-right: 5px;
+				}
+				img {
+					border-radius: 100%;
+					width: 18px;
+					height: 18px;
+					line-height: 16px;
+					vertical-align: top;
+					margin: -1px 5px;
+				}
+				font-size: 14px;
+				line-height: 16px;
+			}
+		}
+
 
 		.am-card-stack {
 			position: relative;

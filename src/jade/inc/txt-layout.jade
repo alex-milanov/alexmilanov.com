@@ -20,6 +20,7 @@ block scripts
 			webgl: "/assets/stack/webgl130p.png",
 			nodejs: "/assets/stack/nodejs140p.png",
 			jade: "/assets/stack/jade400p.png",
+			sass: "/assets/stack/sass320p.png",
 			bower: "/assets/stack/bower400p.png",
 			docky: "/assets/stack/docky200p.png",
 			numix: "/assets/stack/numix256p.png",
@@ -31,12 +32,14 @@ block scripts
 
 		$(document).ready(function(){
 
-			var $techStackOrig = $(".lang-techstack").parent();
+			var $sourceData = $(".lang-meta").parent();
 			var $techStack = $("<div></div>").addClass("am-card-stack");
 
-			var techStackArr = $techStackOrig.text().replace("\n","").split(",");
+			var metaData = JSON.parse($sourceData.text());
 
-			$techStackOrig.replaceWith($techStack);
+			var techStackArr = metaData.techStack;
+
+			$sourceData.replaceWith($techStack);
 
 			var techStackLength = techStackArr.length;
 
@@ -49,5 +52,20 @@ block scripts
 				}
 				$techStack.append($techElGrid);
 			})
+
+			var $metaData = $("<div></div>").addClass("am-article-meta");
+			$metaData.html("");
+			$metaData.append(
+				$("<p></p>").text(metaData.author)
+					.prepend($("<img/>").attr("src",metaData.avatar)
+				)
+			);
+			$metaData.append($("<p></p>").addClass("fa fa-calendar").text(moment(metaData.createDate).format("ll")));
+			//$metaData.append($("<p></p>").text("Last Update: "+moment(metaData.lastUpdate).format("ll")));
+			
+
+			var $h1 = $($(".am-article h1")[0]);
+
+			$h1.after($metaData)
 
 		})

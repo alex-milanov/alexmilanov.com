@@ -1,5 +1,11 @@
-```techstack
-xubuntu,compiz,docky,numix,guake,zsh
+```meta
+{
+  "author": "Alex Milanov",
+  "avatar": "http://1.gravatar.com/avatar/0edabe98dd46b7ca4b69476a6be41736",
+  "createDate": "2015-11-15",
+  "lastUpdate": "2015-11-15",
+  "techStack": ["xubuntu","compiz","docky","numix","guake","zsh"]
+}
 ```
 # My Linux Setup
 
