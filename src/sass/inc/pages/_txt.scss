@@ -68,13 +68,20 @@
 		pre {
 			font-size: 14px;
 			font-family: $am-font-mono;
+		}
+
+		/*
+		pre {
+			font-size: 14px;
+			font-family: $am-font-mono;
 			background: #222;
 			color: #aaa;
 			display: block;
-			padding: 20px 0px;
+			padding: 20px;
 			border-radius: 2px;
 			margin: 0px 0px 8px 0px;
 		}
+		*/
 
 		ul, ol {
 			margin: 0px 0px 8px 0px;

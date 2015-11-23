@@ -3,6 +3,9 @@ extends layout
 block vars
 	- var page = 'txt'
 
+block style
+	link(rel='stylesheet',href='/lib/prism/themes/prism-okaidia.css')
+
 block content
 	.am-page-txt
 		h1 
@@ -14,6 +17,7 @@ block content
 					!= content || ''
 
 block scripts
+	script(src="/lib/prism/prism.js")
 	script.
 		var techList = {
 			gulp: "/assets/stack/gulp128p.png",

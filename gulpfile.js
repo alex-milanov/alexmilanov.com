@@ -20,7 +20,6 @@ var path = require('path');
 
 var gulpMarkedJade = require("./inc/gulp-marked-jade");
 
-
 var paths = {
 	sass: ['./src/sass/**/*.scss'],
 	jade: ['./src/jade/**/*.jade'],
