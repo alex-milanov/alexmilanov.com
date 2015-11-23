@@ -37,3 +37,55 @@ While we are here we should also install bower. Which in a similar fashion as np
 Further on we will be installing global and local dependencies based on the task on hand.
 
 ## II. Initial Project Setup 
+
+In 80% of the cases the initial directory structure for a new project I start would look like this:
+```sh
+  .
+  ├── .gitignore
+  ├── .bowerrc
+  ├── gulpfile.js
+  ├── bower.json
+  ├── package.json
+  ├── node_modules
+  └── src
+      ├── assets
+      ├── content
+      ├── jade
+      ├── js
+      ├── lib
+      └── sass
+```
+
+**.gitignore** is to specify which files/directories should be ignored on git commits. The base directories to ignore are the **node_modules**, **src/lib** and the **dist** where we will be automating stuff into.
+
+```sh
+  node_modules
+  src/lib
+  dist
+```
+
+**.bowerrc** is in json format basicly specifies the directory for the front-end/bower managed dependencies. Usualy I set it to:
+
+```js
+  {
+    "directory": "src/lib"
+  }
+```
+
+**bower.json** & **package.json** are used to specify the project configuration in regards to fron-end/bower and backend/npm. They automaticly generated. And we will go into details later but first you can just start by initing them:
+
+```sh
+  npm init
+  bower init
+```
+
+I usualy create the initial directory strcture via:
+```sh
+  mkdir -p src/{js,jade,sass,assets,lib}
+```
+
+so after we created our initial project structure it's time to do some 
+
+## III. Basic Gulp Automation
+
+
