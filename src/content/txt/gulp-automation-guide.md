@@ -3,7 +3,7 @@
   "author": "Alex Milanov",
   "avatar": "http://1.gravatar.com/avatar/0edabe98dd46b7ca4b69476a6be41736",
   "createDate": "2015-11-11",
-  "lastUpdate": "2015-11-16",
+  "lastUpdate": "2015-11-30",
   "techStack": ["gulp","nodejs","bower","sass","Jade","LiveReload"]
 }
 ```
@@ -25,13 +25,13 @@ After you have node setup, you should also have **npm** by default.
 You will use it to install the backend/node dependecies.
 
 Our first being gulp itself:
-```bash
-npm install -g gulp-cli
+```sh
+$ npm install -g gulp-cli
 ```
 
 While we are here we should also install bower. Which in a similar fashion as npm will take care of the front-end dependencies:
-```bash
-npm install -g bower
+```sh
+$ npm install -g bower
 ```
 
 Further on we will be installing global and local dependencies based on the task on hand.
@@ -39,7 +39,7 @@ Further on we will be installing global and local dependencies based on the task
 ## II. Initial Project Setup 
 
 In 80% of the cases the initial directory structure for a new project I start would look like this:
-```bash
+```sh
 .
 ├── .gitignore
 ├── .bowerrc
@@ -58,7 +58,7 @@ In 80% of the cases the initial directory structure for a new project I start wo
 
 **.gitignore** is to specify which files/directories should be ignored on git commits. The base directories to ignore are the **node_modules**, **src/lib** and the **dist** where we will be automating stuff into.
 
-```bash
+```sh
 node_modules
 src/lib
 dist
@@ -74,14 +74,14 @@ dist
 
 **bower.json** & **package.json** are used to specify the project configuration in regards to fron-end/bower and backend/npm. They automaticly generated. And we will go into details later but first you can just start by initing them:
 
-```bash
-npm init
-bower init
+```sh
+$ npm init
+$ bower init
 ```
 
 I usualy create the initial directory strcture via:
-```bash
-mkdir -p src/{js,jade,sass,assets,lib}
+```sh
+$ mkdir -p src/{js,jade,sass,assets,lib}
 ```
 
 So, after we created our initial project structure it's time to create our ...
@@ -90,8 +90,8 @@ So, after we created our initial project structure it's time to create our ...
 
 Let's install some "dev" dependencies (we will be using them in the development environment - where most of the automation would be triggered) In this case gulp itself.
 
-```bash
-npm install --save-dev gulp
+```sh
+$ npm install --save-dev gulp
 ```
 
 This will install the **gulp** library/module in the **node_modules** directory and add **gulp** as a devDependency in **package.json**.
@@ -115,13 +115,13 @@ gulp.task('js', function(done) {
 Before we trigger the **js** task, we need something to be copied. Create **./src/js/init.js** with the following content:
 
 ```js
-console.log("Hello World!");
+$ console.log("Hello World!");
 ```
 
 Now lets trigger our first task:
 
-```bash
-gulp js
+```sh
+$ gulp js
 ```
 
 Which should produce **./dist/js/init.js** with the same content.
@@ -130,9 +130,92 @@ So we are copying files around. Alright, but I can do this with cp you say.
 
 True, we are just beginning. Let's take the js task up a notch.
 
-## IV. Minifying and hinting/linting
+## IV. Advanced JS Task - Minifying and Hinting/Linting
+I am currently not using this functionality. Though when some of my libraries are production ready there is going to be the need to minify them in order to save space and also they should be consistent with a styleguide where jshint/jslint would help.
 
+Let's break it down in two parts. First let's do the
 
+### IV. Part 1 - Minifying or concating and uglyfying
 
+Let's install the dependencies:
+```sh
+$ npm install --save-dev del gulp-concat gulp-rename gulp-uglify gulp-sourcemaps
+```
 
+Where:
+- **del** for cleaning up the directory before deploying to it
+- **gulp-concat** will be using to paste together all the js files into one
+- **gulp-rename** for renaming the file
+- **gulp-uglify** would be used to shorted the code
+- and **gulp-sourcemaps** would create a sourcemap which links together the minified code to it's original (useful for debugging.)
+
+Then we need to modify gulpfile.js by adding the new modules:
+```js
+// loads up the gulp module and assigns it to the gulp variable
+var gulp = require('gulp');
+var del = require('del');
+// minifying
+var concat = require('gulp-concat');
+var rename = require('gulp-rename');
+var uglify = require('gulp-uglify');
+var sourcemaps = require('gulp-sourcemaps');
+...
+```
+
+Afterwards we need to modify the js task itself:
+```js
+...
+// define the task js
+gulp.task('js', function(done) {
+  // clean up the dist/js folder before deploying
+  del([
+    'dist/js/**/*'
+  ],
+    // get the js files
+    gulp.src('src/js/**/*.js')
+      // init the sourcemaps
+      .pipe( sourcemaps.init() )
+      .pipe( concat('app.js'))
+      // send the concated file to the dist directory
+      .pipe( gulp.dest('dist/js'))
+      // next up the .min.js file
+      .pipe( rename('app.min.js') )
+      .pipe( uglify() )
+      // write the sourcemaps
+      .pipe(sourcemaps.write({includeContent: false, sourceRoot: '/src'}))
+      // again send the files to the same directory
+      .pipe( gulp.dest('dist/js'))
+      // when we are done trigger the callback
+      .on('end',done)
+  )
+});
+```
+
+When you run **gulp js** it will create the following structure:
+dist
+└── js
+    ├── app.js
+    └── app.min.js
+    
+The problem is there is no minification visible yet.
+
+Let's also change the **src/js/init.js** file 
+```js
+// put the console log into function
+function printHelloWorld(){
+  var someLongVarName = "Hello World!";
+  console.log(someLongVarName);
+}
+
+// listen to when the dom content is loaded - equivalent to $(document).ready()
+document.addEventListener("DOMContentLoaded", function(event) { 
+  printHelloWorld();  
+});
+```
+
+Now we should be able to see the difference between **app.js** and **app.min.js**
+
+Next up. Let's talk about ...
+
+### IV. Part 2 - Coding Style, Hinting and Linting
 
