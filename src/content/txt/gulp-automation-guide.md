@@ -135,7 +135,7 @@ I am currently not using this functionality. Though when some of my libraries ar
 
 Let's break it down in two parts. First let's do the
 
-### IV. Part 1 - Minifying or concating and uglyfying
+### IV. Part 1 - Minifying or concating and uglifying
 
 Let's install the dependencies:
 ```sh
@@ -192,11 +192,13 @@ gulp.task('js', function(done) {
 ```
 
 When you run **gulp js** it will create the following structure:
+```sh
 dist
 └── js
     ├── app.js
     └── app.min.js
-    
+```
+
 The problem is there is no minification visible yet.
 
 Let's also change the **src/js/init.js** file 
@@ -213,7 +215,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 });
 ```
 
-Now we should be able to see the difference between **app.js** and **app.min.js**
+Now **gulp js** again and we should be able to see the difference between **app.js** and **app.min.js**
 
 Next up. Let's talk about ...
 
