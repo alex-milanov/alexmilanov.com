@@ -182,7 +182,7 @@ gulp.task('js', function(done) {
       .pipe( rename('app.min.js') )
       .pipe( uglify() )
       // write the sourcemaps
-      .pipe(sourcemaps.write({includeContent: false, sourceRoot: '/src'}))
+      .pipe( sourcemaps.write({includeContent: false, sourceRoot: '../../src'}) )
       // again send the files to the same directory
       .pipe( gulp.dest('dist/js'))
       // when we are done trigger the callback
@@ -211,7 +211,7 @@ function printHelloWorld(){
 
 // listen to when the dom content is loaded - equivalent to $(document).ready()
 document.addEventListener("DOMContentLoaded", function(event) { 
-  printHelloWorld();  
+  printHelloWorld()
 });
 ```
 
@@ -220,4 +220,55 @@ Now **gulp js** again and we should be able to see the difference between **app.
 Next up. Let's talk about ...
 
 ### IV. Part 2 - Coding Style, Hinting and Linting
+
+One of the great things and at the same time worst things in JavaScript is it's flexibility and expressiveness. You have a dozen ways to write the same functionality. Now with all ES6/ES2015 syntactic sugar things are taken up a notch.
+
+How can we survive the jungle of spagetti code. Is there a light at the end of the tunnel.
+
+I won't go into details there are couple of community sourced styleguides. Most of them conflict with each other. The best bet is to pick one of them or follow the one that is already picked.
+
+In the meantime let's make our lives a little bit easier by setting up some jshinting in our gulp automation:
+
+Step 1 - Dependencies
+```sh
+$ npm install --save-dev jshint gulp-jshint jshint-stylish
+```
+
+Step 2 - Require gulp-jshint in gulpfile.js
+```js
+...
+var sourcemaps = require('gulp-sourcemaps');
+// hinting
+var jshint = require('gulp-jshint');
+```
+
+Step 3 - Add hinting to the js task
+```js
+    ...
+    gulp.src('src/js/**/*.js')
+      //jshint
+      .pipe(jshint())
+      .pipe(jshint.reporter('jshint-stylish'))
+      // init the sourcemaps
+    ...
+```
+
+Run **gulp js** again and we should get:
+```sh
+src/js/init.js
+  line 9  col 20  Missing semicolon.
+
+  ⚠  1 warning
+```
+
+Oops we forgot a semicolon. I'll let you fix it and run the task again. Now it should finish with no errors.
+
+Next up. Let's do some templating.
+
+### V. Templating automation with jade
+
+
+
+
+
 
