@@ -3,8 +3,8 @@
   "author": "Alex Milanov",
   "avatar": "http://1.gravatar.com/avatar/0edabe98dd46b7ca4b69476a6be41736",
   "createDate": "2015-11-15",
-  "lastUpdate": "2015-11-15",
-  "techStack": ["xubuntu","compiz","docky","numix","guake","zsh"]
+  "lastUpdate": "2016-01-16",
+  "techStack": ["xubuntu","compiz","docky","numix","zsh","nodejs"]
 }
 ```
 # My Linux Setup
@@ -21,10 +21,12 @@ Here is the current tech checklist:
 - **xubuntu** linux base
 - **compiz** - I use mostly for workspace transitions, like it is in unity
 - **docky**, **numix circle** theme - for the OSX like doc and icons
-- **zsh** shell and **guake** terminal
+- quake style drop-down console with custom pimped up **zsh** shell
 
 Let's get started then.
+
 ## Step 1: Download and install xubuntu
+
 I am currently using general ubuntu with xubuntu-desktop installed afterwards. 
 
 I managed to set up 14.04 in a virtual box which I might do next time I need to setup linux on my machine.
@@ -32,14 +34,16 @@ I managed to set up 14.04 in a virtual box which I might do next time I need to 
 Just get the .iso from http://xubuntu.org/ burn it to disk and follow the installation process.
 
 ## Step 2: Install dependencies
+
 Let's start of by installing initial dependencies:
 ```sh
-  sudo apt-get install synaptic docky compiz compizconfig-settings-manager guake
+  sudo apt-get install synaptic docky vlc git gedit gedit-plugins curl
 ```
 
 If you are installing it in a virtualbox you need to install the virtualbox guest additions as well.
 
 ## Step 3: Customize the appearance
+
 1. Set up docky
  - Start up docky by using the applications (Whisker) menu top left
  - Open Docky Settings (First Icon) -> Theme Transparent, 3D Background
@@ -60,34 +64,83 @@ If you are installing it in a virtualbox you need to install the virtualbox gues
 ```
 
 ## Step 4: Set up compiz for smooth desktop/workspaces interaction
+
 **Caution!** It can be a pain to set it up properly. 
 
 I only use this for smooth workspace transitions. You can achieve similar interaction (without the smootheness) with Settings -> Window Manager & Window Manager Tweaks. 
 
-1. Open Settings -> CompizConfig Settings Manager
-2. Here are the base plugins you need to select:
+
+1. Install the dependencies
+```sh
+  sudo apt get install compiz compizconfig-settings-manager
+```
+
+2. Open Settings Manager -> CompizConfig Settings Manager
+
+3. Here are the base plugins you need to select:
  - General: Composite, Gnome Compatibility, OpenGL, Copy to texture
  - Desktop: Desktop Wall, Expo, Viewport Switcher ()
  - Effects: Window Decoration
  - Utitlity: Compiz Library Toolbox, Notification, Regex Matching
  - Window Management: Grid, Move Window, Place Windows, Resize Window
-3. Replace the window manager with compiz
 
+4. Replace the window manager with compiz
 ```sh
   compiz --replace
 ```
-4. Restart
 
-## TODO
-- [ ] zsh (+import color scheme), guake
-- [ ] dev environment
-- [ ] gimp and creative apps
-- [ ] i18n
+5. Restart
 
-## Notes
- - someone pointed out that you can use the built in xfce4-terminal instead of guake
+## Step 5: Console Setup
 
+1. Console as drop-down
+ - Open Settings Manager -> Keyboard -> Application Shortcuts
+ - Click on the `+ Add` button enter the following `xfce4-terminal --drop-down`
+ - Hit OK and press `F12` to set the shortcut key.
+ - Afterwards rightclick the console indicator icon in the panel and select `Preferences`
+ - Be sure to set up the width to 100% and tweak the opacity
+
+2. Pimp my Console (with zsh and custom theme)
 ```sh
-  xfce4-terminal --drop-down
+  # Install zsh via 
+  sudo apt-get install zsh
+  
+  # Install oh-my-zsh 
+  wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
+  
+  # Set it as default: 
+  chsh -s $(which zsh)
+  
+  # then log out and log in and it should work
 ```
+
+3. I am currently using `ranger` as in console file manager 
+```sh
+  sudo apt-get install ranger
+```
+
+## Step 6: Basic Dev Environment
+
+I happen to be a Full-Stack JavaScript developer (with some additions) so nodejs is super important.
+And there is one correct way to install it (on linux):
+
+1. Install and setup node via nvm (node version manager)
+```sh
+  # first download and install nvm
+  curl https://raw.githubusercontent.com/creationix/nvm/v0.11.1/install.sh | zsh
+
+  # to check if the installation was successful open new tab and list remote versions 
+  nvm ls-remote
+  
+  # install the latest version (currently 5) 
+  nvm install v5.*
+
+  # set it as default  
+  nvm alias default v5.*
+
+  # finally install some global dependencies via nvm   
+  npm install -g nodemon bower gulp-cli
+```
+
+
 
