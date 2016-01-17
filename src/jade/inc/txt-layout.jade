@@ -101,13 +101,11 @@ block scripts
 				)
 			);
 			$metaData.append($("<p></p>").addClass("fa fa-calendar").text(moment(metaData.createDate).format("ll")));
-			//$metaData.append($("<p></p>").text("Last Update: "+moment(metaData.lastUpdate).format("ll")));
-			
-
+			$metaData.append($("<p></p>").text("Last Update: "+moment(metaData.lastUpdate).format("ll")));
 			var $h1 = $($(".am-article h1")[0]);
 
 			$h1.after($metaData)
-			
+
 			buildMenu('.am-page-txt','.am-menu-nav');
 
 		})
