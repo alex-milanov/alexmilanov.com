@@ -1,7 +1,26 @@
 .am-page-txt {
+	display: block;
+	position: relative;
+	.am-menu-nav {
+		position: fixed;
+		top: 70px;
+		right: 40px;
+		width: 210px;
+		li {
+			list-style: none;
+			line-height: 20px;
+			font-size: 14px;
+			margin: 5px 0px;
+			padding: 5px;
+			cursor: pointer;
+			&:hover {
+					background: #ccc;
+			}
+		}
+	}
 	.am-article {
 		@extend .card;
-		padding: 0px 40px 20px 40px;
+		padding: 0px 40px 0px 40px;
 		font-size: 18px;
 		a {
 			color: #24a;
@@ -11,7 +30,7 @@
 			text-align: center;
 			max-width: 100%;
 		}
-		
+
 		.am-article-meta {
 			margin: 15px -40px 20px -40px;
 			text-align: center;
@@ -88,9 +107,22 @@
 			margin: 16px 0px 8px 0px;
 		}
 
-		pre {
+		pre, code {
 			font-size: 14px;
 			font-family: $am-font-mono;
+		}
+
+		pre code {
+			border: none;
+			background: inherit;
+			padding: 0px;
+		}
+
+		code {
+			border: 1px solid #eee;
+			background: #fafafa;
+			border-radius: 3px;
+			padding: 4px;
 		}
 
 		/*
@@ -108,6 +140,10 @@
 
 		ul, ol {
 			margin: 0px 0px 8px 0px;
+		}
+
+		#disqus_thread {
+			padding: 40px 0px;
 		}
 	}
 }

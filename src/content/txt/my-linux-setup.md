@@ -4,14 +4,14 @@
   "avatar": "http://1.gravatar.com/avatar/0edabe98dd46b7ca4b69476a6be41736",
   "createDate": "2015-11-15",
   "lastUpdate": "2016-01-16",
-  "techStack": ["xubuntu","compiz","docky","numix","zsh","nodejs"]
+  "techStack": ["xubuntu","docky","numix","zsh","nodejs"]
 }
 ```
 # My Linux Setup
 
 By popular demand (at least once a week I get a question about my setup)
 
-I decided to write an article that will guide you throught the process of installing, setting up and customizing the linux experience based on my preference (hence the name of the article).
+I decided to write an article that will guide you through the process of installing, setting up and customizing the linux experience based on my preference (hence the name of the article).
 
 I will be updating this article as I am changing my setup.
 
@@ -27,11 +27,7 @@ Let's get started then.
 
 ## Step 1: Download and install xubuntu
 
-I am currently using general ubuntu with xubuntu-desktop installed afterwards. 
-
-I managed to set up 14.04 in a virtual box which I might do next time I need to setup linux on my machine.
-
-Just get the .iso from http://xubuntu.org/ burn it to disk and follow the installation process.
+Just get the .iso from http://xubuntu.org/ burn it to disk, usb ... and follow the installation process.
 
 ## Step 2: Install dependencies
 
@@ -63,58 +59,36 @@ If you are installing it in a virtualbox you need to install the virtualbox gues
   sudo apt-get install numix-icon-theme-circle
 ```
 
-## Step 4: Set up compiz for smooth desktop/workspaces interaction
+## Step 4: Additional Setup - Workspaces, Shortcut keys, i18n
 
-**Caution!** It can be a pain to set it up properly. 
+ **Note!** In the previous setup I used **compiz** for smooth workspace transitions. The support of that project seems to be lacking recently.
 
-I only use this for smooth workspace transitions. You can achieve similar interaction (without the smootheness) with Settings -> Window Manager & Window Manager Tweaks. 
-
-
-1. Install the dependencies
-```sh
-  sudo apt get install compiz compizconfig-settings-manager
-```
-
-2. Open Settings Manager -> CompizConfig Settings Manager
-
-3. Here are the base plugins you need to select:
- - General: Composite, Gnome Compatibility, OpenGL, Copy to texture
- - Desktop: Desktop Wall, Expo, Viewport Switcher ()
- - Effects: Window Decoration
- - Utitlity: Compiz Library Toolbox, Notification, Regex Matching
- - Window Management: Grid, Move Window, Place Windows, Resize Window
-
-4. Replace the window manager with compiz
-```sh
-  compiz --replace
-```
-
-5. Restart
+ So in my latest setup I am using the built in Settings (Workspaces, Window Manager & Window Manager Tweaks) to be able to have the same interaction (without the smoothness).
 
 ## Step 5: Console Setup
 
 1. Console as drop-down
  - Open Settings Manager -> Keyboard -> Application Shortcuts
- - Click on the `+ Add` button enter the following `xfce4-terminal --drop-down`
- - Hit OK and press `F12` to set the shortcut key.
- - Afterwards rightclick the console indicator icon in the panel and select `Preferences`
+ - Click on the Add button and enter the following: `xfce4-terminal --drop-down`
+ - Hit OK and press **F12** to set the shortcut key.
+ - Afterwards right click the console indicator icon in the panel and select Preferences
  - Be sure to set up the width to 100% and tweak the opacity
 
 2. Pimp my Console (with zsh and custom theme)
 ```sh
-  # Install zsh via 
+  # Install zsh via
   sudo apt-get install zsh
-  
-  # Install oh-my-zsh 
+
+  # Install oh-my-zsh
   wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
-  
-  # Set it as default: 
+
+  # Set it as default:
   chsh -s $(which zsh)
-  
+
   # then log out and log in and it should work
 ```
 
-3. I am currently using `ranger` as in console file manager 
+3. I am currently using `ranger` as in console file manager
 ```sh
   sudo apt-get install ranger
 ```
@@ -129,10 +103,10 @@ And there is one correct way to install it (on linux):
   # first download and install nvm
   curl https://raw.githubusercontent.com/creationix/nvm/v0.11.1/install.sh | zsh
 
-  # to check if the installation was successful open new tab and list remote versions 
+  # to check if the installation was successful open new tab and list remote versions
   nvm ls-remote
-  
-  # install the latest version (currently 5) 
+
+  # install the latest version (currently 5)
   nvm install v5.*
 
   # set it as default  
@@ -141,6 +115,3 @@ And there is one correct way to install it (on linux):
   # finally install some global dependencies via nvm   
   npm install -g nodemon bower gulp-cli
 ```
-
-
-

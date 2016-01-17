@@ -8,6 +8,7 @@ block style
 
 block content
 	.am-page-txt
+		.am-menu-nav
 		h1 
 			i.am-font-graphic .txt 
 			span Thoughts, Tips and Tricks
@@ -15,10 +16,45 @@ block content
 			.am-grid-5-4
 				.am-article
 					!= content || ''
+					include disqus
 
 block scripts
 	script(src="/lib/prism/prism.js")
+	script(src="/lib/skrollr/src/skrollr.js")
 	script.
+		function buildMenu(docEl, menuEl){
+
+			var menuItems = [];
+
+			// extract info
+			$(docEl).find("h2,h3,h4").each(function(){
+			//$("h2").each(function(){
+				menuItems.push({
+					id: $(this).attr('id'),
+					text: $(this).text()
+				});
+			});
+
+
+			$(menuEl).html('');
+
+			// build menu
+			for(var i in menuItems){
+				
+				var menuItem = menuItems[i];
+				var _temp = function(menuItem){
+					$(menuEl).append(
+						$("<li></li>").append(
+							$("<a></a>")
+								.html(menuItem.text)
+								.attr('href','#'+menuItem.id)
+						)
+					);
+				}(menuItem);
+			}
+		}
+
+	
 		var techList = {
 			gulp: "/assets/stack/gulp128p.png",
 			webgl: "/assets/stack/webgl130p.png",
@@ -71,5 +107,7 @@ block scripts
 			var $h1 = $($(".am-article h1")[0]);
 
 			$h1.after($metaData)
+			
+			buildMenu('.am-page-txt','.am-menu-nav');
 
 		})
