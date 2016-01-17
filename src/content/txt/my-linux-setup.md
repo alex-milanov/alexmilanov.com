@@ -19,7 +19,6 @@ I will be updating this article as I am changing my setup.
 
 Here is the current tech checklist:
 - **xubuntu** linux base
-- **compiz** - I use mostly for workspace transitions, like it is in unity
 - **docky**, **numix circle** theme - for the OSX like doc and icons
 - quake style drop-down console with custom pimped up **zsh** shell
 
