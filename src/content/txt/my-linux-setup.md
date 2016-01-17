@@ -35,8 +35,6 @@ Let's start of by installing initial dependencies:
   sudo apt-get install synaptic docky vlc git gedit gedit-plugins curl
 ```
 
-If you are installing it in a virtualbox you need to install the virtualbox guest additions as well.
-
 ## Step 3: Customize the appearance
 
 1. Set up docky
@@ -114,3 +112,12 @@ And there is one correct way to install it (on linux):
   # finally install some global dependencies via nvm   
   npm install -g nodemon bower gulp-cli
 ```
+
+## Further Resources
+
+- Add Quick Preview: http://www.webupd8.org/2015/01/quick-file-previewer-gloobus-preview.html
+
+## TODO
+- [ ] Expand Additional Setup
+- [ ] Music Production Environment
+- [ ] App Customization - Gimp -> Photoshop, Inkscape, Gedit++, Atom beta  
