@@ -3,7 +3,7 @@
   "author": "Alex Milanov",
   "avatar": "http://1.gravatar.com/avatar/0edabe98dd46b7ca4b69476a6be41736",
   "createDate": "2015-11-15",
-  "lastUpdate": "2016-01-16",
+  "lastUpdate": "2016-03-01",
   "techStack": ["xubuntu","docky","numix","zsh","nodejs"]
 }
 ```
@@ -111,6 +111,41 @@ And there is one correct way to install it (on linux):
 
   # finally install some global dependencies via nvm   
   npm install -g nodemon bower gulp-cli
+```
+
+## Step 7: Compiling Atom beta from source
+Atom is a powerful and easy to use open source IDE written in JavaScript by the team behind github. 
+
+Currently the precompiled .deb files both for the latest and beta releases that you can download have performance issues. What I've found is when I compile them from source the performance is much better.
+
+You can read the full build instructions here:
+https://github.com/atom/atom/blob/master/docs/build-instructions/linux.md
+
+I am just gonna add the relevant once here:
+1. Install deps
+```sh
+  sudo apt-get install build-essential git libgnome-keyring-dev fakeroot
+```
+
+2. Clone the atom repo
+```sh
+  git clone https://github.com/atom/atom && cd atom
+```
+
+3. Checkout the latest release
+```sh
+  git fetch - p
+  git checkout $(git describe --tags `git rev-list --tags --max-count=1`)
+```
+
+4. Build atom (You might wanna get some coffee or 3, watch a movie or sth. while you wait for this)
+```sh
+  script/build
+```
+
+5. Generate a .deb package so that it can be installed/uninstalled easily
+```sh
+  script/grunt mkdeb
 ```
 
 ## Further Resources
