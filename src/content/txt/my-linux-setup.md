@@ -141,7 +141,7 @@ I am just gonna add the relevant once here:
 
 3. Checkout the latest release
 ```sh
-  git fetch - p
+  git fetch -p
   git checkout $(git describe --tags `git rev-list --tags --max-count=1`)
 ```
 
