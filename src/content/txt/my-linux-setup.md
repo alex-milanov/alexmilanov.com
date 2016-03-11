@@ -28,12 +28,24 @@ Let's get started then.
 
 Just get the .iso from http://xubuntu.org/ burn it to disk, usb ... and follow the installation process.
 
-## Step 2: Install dependencies
+## Step 2: Install dependencies & general tools
 
 Let's start of by installing initial dependencies:
+- **docky** is what I am using as an applications dock, which gives similar to OSX feel
+- **synaptic** is a gui package manager (alternative to writing sudo apt-get in the console)
+- **git** is what is used predominantly for version control
+- **curl** has similar functionality to wget, also can be used to test REST APIs
+- **vlc** opens most video and audio apps, don't know why it doesn't come pre-installed
+- **nemo** is my choice for gui file manager
+- **gedit** is general use notepad
+- **ranger** is currently my in-console file manager
+- **xclip** is a way to copy the contents of a file in the clipboard from the console
+
 ```sh
-  sudo apt-get install synaptic docky vlc git gedit gedit-plugins curl
+  sudo apt-get install docky synaptic git curl vlc nemo gedit gedit-plugins ranger xclip
 ```
+
+I will expand the usage of these apps in a future article (My Linux Workflow)
 
 ## Step 3: Customize the appearance
 
@@ -85,11 +97,6 @@ Let's start of by installing initial dependencies:
   # then log out and log in and it should work
 ```
 
-3. I am currently using `ranger` as in console file manager
-```sh
-  sudo apt-get install ranger
-```
-
 ## Step 6: Basic Dev Environment
 
 I happen to be a Full-Stack JavaScript developer (with some additions) so nodejs is super important.
@@ -114,7 +121,7 @@ And there is one correct way to install it (on linux):
 ```
 
 ## Step 7: Compiling Atom beta from source
-Atom is a powerful and easy to use open source IDE written in JavaScript by the team behind github. 
+Atom is a powerful and easy to use open source IDE written in JavaScript by the team behind github.
 
 Currently the precompiled .deb files both for the latest and beta releases that you can download have performance issues. What I've found is when I compile them from source the performance is much better.
 
