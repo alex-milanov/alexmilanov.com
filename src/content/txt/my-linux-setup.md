@@ -1,10 +1,10 @@
 ```meta
 {
-  "author": "Alex Milanov",
-  "avatar": "http://1.gravatar.com/avatar/0edabe98dd46b7ca4b69476a6be41736",
-  "createDate": "2015-11-15",
-  "lastUpdate": "2016-03-01",
-  "techStack": ["xubuntu","docky","numix","zsh","nodejs"]
+	"author": "Alex Milanov",
+	"avatar": "http://1.gravatar.com/avatar/0edabe98dd46b7ca4b69476a6be41736",
+	"createDate": "2015-11-15",
+	"lastUpdate": "2016-03-01",
+	"techStack": ["xubuntu","docky","numix","zsh","nodejs"]
 }
 ```
 # My Linux Setup
@@ -42,7 +42,7 @@ Let's start of by installing initial dependencies:
 - **xclip** is a way to copy the contents of a file in the clipboard from the console
 
 ```sh
-  sudo apt-get install docky synaptic git curl vlc nemo gedit gedit-plugins ranger xclip
+	sudo apt-get install docky synaptic git curl vlc nemo gedit gedit-plugins ranger xclip
 ```
 
 I will expand the usage of these apps in a future article (My Linux Workflow)
@@ -63,9 +63,9 @@ I will expand the usage of these apps in a future article (My Linux Workflow)
  - Change it via: Settings -> Appearance -> Icons
 
 ```sh
-  sudo add-apt-repository ppa:numix/ppa
-  sudo apt-get update
-  sudo apt-get install numix-icon-theme-circle
+	sudo add-apt-repository ppa:numix/ppa
+	sudo apt-get update
+	sudo apt-get install numix-icon-theme-circle
 ```
 
 ## Step 4: Additional Setup - Workspaces, Shortcut keys, i18n
@@ -85,16 +85,16 @@ I will expand the usage of these apps in a future article (My Linux Workflow)
 
 2. Pimp my Console (with zsh and custom theme)
 ```sh
-  # Install zsh via
-  sudo apt-get install zsh
+	# Install zsh via
+	sudo apt-get install zsh
 
-  # Install oh-my-zsh
-  wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
+	# Install oh-my-zsh
+	wget https://github.com/robbyrussell/oh-my-zsh/raw/master/tools/install.sh -O - | zsh
 
-  # Set it as default:
-  chsh -s $(which zsh)
+	# Set it as default:
+	chsh -s $(which zsh)
 
-  # then log out and log in and it should work
+	# then log out and log in and it should work
 ```
 
 ## Step 6: Basic Dev Environment
@@ -104,20 +104,20 @@ And there is one correct way to install it (on linux):
 
 1. Install and setup node via nvm (node version manager)
 ```sh
-  # first download and install nvm
-  curl https://raw.githubusercontent.com/creationix/nvm/v0.11.1/install.sh | zsh
+	# first download and install nvm
+	curl https://raw.githubusercontent.com/creationix/nvm/v0.11.1/install.sh | zsh
 
-  # to check if the installation was successful open new tab and list remote versions
-  nvm ls-remote
+	# to check if the installation was successful open new tab and list remote versions
+	nvm ls-remote
 
-  # install the latest version (currently 5)
-  nvm install v5.*
+	# install the latest version (currently 5)
+	nvm install v5.*
 
-  # set it as default  
-  nvm alias default v5.*
+	# set it as default
+	nvm alias default v5.*
 
-  # finally install some global dependencies via nvm   
-  npm install -g nodemon bower gulp-cli
+	# finally install some global dependencies via nvm	 
+	npm install -g nodemon bower gulp-cli
 ```
 
 ## Step 7: Compiling Atom beta from source
@@ -131,28 +131,28 @@ https://github.com/atom/atom/blob/master/docs/build-instructions/linux.md
 I am just gonna add the relevant once here:
 1. Install deps
 ```sh
-  sudo apt-get install build-essential git libgnome-keyring-dev fakeroot
+	sudo apt-get install build-essential git libgnome-keyring-dev fakeroot
 ```
 
 2. Clone the atom repo
 ```sh
-  git clone https://github.com/atom/atom && cd atom
+	git clone https://github.com/atom/atom && cd atom
 ```
 
 3. Checkout the latest release
 ```sh
-  git fetch -p
-  git checkout $(git describe --tags `git rev-list --tags --max-count=1`)
+	git fetch -p
+	git checkout $(git describe --tags `git rev-list --tags --max-count=1`)
 ```
 
 4. Build atom (You might wanna get some coffee or 3, watch a movie or sth. while you wait for this)
 ```sh
-  script/build
+	script/build
 ```
 
 5. Generate a .deb package so that it can be installed/uninstalled easily
 ```sh
-  script/grunt mkdeb
+	script/grunt mkdeb
 ```
 
 ## Further Resources
@@ -162,4 +162,4 @@ I am just gonna add the relevant once here:
 ## TODO
 - [ ] Expand Additional Setup
 - [ ] Music Production Environment
-- [ ] App Customization - Gimp -> Photoshop, Inkscape, Gedit++, Atom beta  
+- [ ] App Customization - Gimp -> Photoshop, Inkscape, Gedit++, Atom beta

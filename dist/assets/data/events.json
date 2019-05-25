@@ -1,0 +1,20 @@
+[
+	{
+		"title": "{fun} QooleJS - 3D Editor with Three.js",
+		"url": "https://livecoding.tv/alex-milanov",
+		"start": "2015-11-15",
+		"time": "20:00",
+		"recurring": true,
+		"recurrence": "weekly",
+		"daysOfWeek": [6]
+	},
+	{
+		"title": "{fun} JSLoops, Music Studio with #WebAudioAPI",
+		"url": "https://livecoding.tv/alex-milanov",
+		"start": "2015-11-15",
+		"time": "20:00",
+		"recurring": true,
+		"recurrence": "weekly",
+		"daysOfWeek": [0,1,2,3,4]
+	}
+]

@@ -1,4 +1,4 @@
-.am-grid {	
+.am-grid {
 	display: block;
 	float: left;
 	box-sizing: border-box;
@@ -42,6 +42,12 @@
 }
 .am-grid-10 {
 	@include am-grid(10,1)
+}
+.am-grid-10-7 {
+	@include am-grid(10,7)
+}
+.am-grid-10-3 {
+	@include am-grid(10,3)
 }
 .am-grid-12 {
 	@include am-grid(12,1)
