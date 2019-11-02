@@ -26,7 +26,7 @@
     "gulp-util": "^2.2.14",
     "jade": "^1.11.0",
     "jshint-stylish": "^2.0.1",
-    "lodash": "^3.10.1",
+    "lodash": "^4.17.15",
     "main-bower-files": "^2.8.0",
     "marked": "^0.3.3",
     "shelljs": "^0.3.0",
